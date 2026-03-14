@@ -9,7 +9,7 @@ public class Test {
 
         Employee emp1 = new Employee("John", 30, "Software Engineer");
         Student stu = new Student("Nastya", 19, "Information Systems", 3.7);
-        PhDStudent phd = new PhDStudent("Alice", 26, "Computer Science");
+        PhDStudent phd = new PhDStudent("Alice", 26, "AI");
         Employee emp2 = new Employee("Daenerys", 25, "Data Scientist");
 
         PersonRegistry registry = new PersonRegistry();
