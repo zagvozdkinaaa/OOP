@@ -2,15 +2,15 @@ package lab2.t5;
 
 public class Test {
     public static void main(String[] args) {
-        Dog dog = new Dog("Zhuzha", 3);
-        Cat cat = new Cat("Musya", 5);
-        Bird bird = new Bird("Kesha", 2);
-        Fish fish = new Fish("Nemo", 4);
+        Animal dog = new Dog("Zhuzha", 3);
+        Animal cat = new Cat("Musya", 5);
+        Animal bird = new Bird("Kesha", 2);
+        Animal fish = new Fish("Nemo", 4);
 
-        Employee emp1 = new Employee("John", 30, "Software Engineer");
-        Student stu = new Student("Nastya", 19, "Information Systems", 3.7);
-        PhDStudent phd = new PhDStudent("Alice", 26, "AI");
-        Employee emp2 = new Employee("Daenerys", 25, "Data Scientist");
+        Person emp1 = new Employee("John", 30, "Software Engineer");
+        Person stu = new Student("Nastya", 19, "Information Systems", 3.7);
+        Person phd = new PhDStudent("Alice", 26, "AI");
+        Person emp2 = new Employee("Daenerys", 25, "Data Scientist");
 
         PersonRegistry registry = new PersonRegistry();
         registry.addPerson(emp1);

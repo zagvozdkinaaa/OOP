@@ -1,6 +1,6 @@
 package lab2.t5;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal>, Cloneable, Groomable {
     private String name;
     private int age;
 
@@ -18,5 +18,25 @@ public abstract class Animal {
     @Override
     public String toString() {
         return "Name: " + name + ", Age: " + age;
+    }
+
+    @Override
+    public void clean() {
+        System.out.println("The animal is being cleaned");
+    }
+
+    @Override
+    public void maintainHealth() {
+        System.out.println("The animal's health is being maintained");
+    }
+
+    @Override
+    public int compareTo(Animal other) {
+        return Integer.compare(this.age, other.age);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

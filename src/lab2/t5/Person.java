@@ -2,7 +2,7 @@ package lab2.t5;
 
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person implements Comparable<Person>, Cloneable, PetCaretaker{
     private String name;
     private int age;
     private Animal pet;
@@ -67,5 +67,34 @@ public abstract class Person {
     @Override
     public int hashCode() {
         return Objects.hash(name, age, pet);
+    }
+
+    @Override
+    public void feedPet(Animal pet) {
+        System.out.println(this.name + " is feeding " + pet.getName());
+    }
+
+    @Override
+    public void talkToPet(Animal pet) {
+        System.out.println(this.name + " is talking to " + pet.getName());
+    }
+
+    @Override
+    public void playWithPet(Animal pet) {
+        System.out.println(this.name + " is playing with " + pet.getName());
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        return this.name.compareTo(other.name);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        Person cloned = (Person) super.clone();
+        if (this.pet != null) {
+            cloned.pet = (Animal) this.pet.clone();
+        }
+        return cloned;
     }
 }
